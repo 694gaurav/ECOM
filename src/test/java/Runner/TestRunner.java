@@ -14,9 +14,9 @@ import io.cucumber.junit.CucumberOptions;
 	                 monochrome = true,
 	                 plugin = { "json:target/cucumber.json",
 	                		 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-	                		 "rerun:Rerun/rerun1.txt" } //,
+	                		 "rerun:Rerun/rerun1.txt" } ,
 	                 	
-	               //  tags ="NonEShipment_1.1"
+	                 tags ="NonEShipment_1.1"
 	                 )
 	
 public class TestRunner {
