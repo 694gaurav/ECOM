@@ -9,14 +9,15 @@ import io.cucumber.junit.CucumberOptions;
 
 
 	@RunWith(Cucumber.class)
-	@CucumberOptions(features = {"Features/NMIAL_Outbound.feature"}, 
+	@CucumberOptions(features = {"Features/Bial_ECOM.feature"}, 
 	                 glue = "stepdefinition",
 	                 monochrome = true,
 	                 plugin = { "json:target/cucumber.json",
 	                		 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 	                		 "rerun:Rerun/rerun1.txt" } ,
 	                 	
-	                 tags ="NonEShipment_1.1"
+	                tags ="@Inbound_WDO"
+	                		
 	                 )
 	
 public class TestRunner {

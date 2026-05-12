@@ -275,7 +275,7 @@ Feature: BIAL Ecom feature
   When I login with "BIAL ECOM Approver" BIAL Ecom Agent user given in "Login" sheet for Outbound
   When launch browser for Ecom GHA application and login with "ECOM GHA user" ECOM GHA user given in "Login" sheet for Inbound
   When click on Masters>> More>> Flight> Details in ECOM GHA
-  When click on Add button and enter "6e" Flight No, select "1634" Aircraft Type in Flight Details of ECOM GHA
+  When click on Add button and enter "6e" Flight No, select "2568" Aircraft Type in Flight Details of ECOM GHA
   When click on Routing details and enter "HYD" Origin, "BLR" Destination Airport details and click on Save button of ECOM GHA
   When click on Imports>> Import Manifest and enter created "" Flight of ECOM GHA 
   When enter "AAF" with "6e" and add Flight ULD details
