@@ -92,9 +92,9 @@ Feature: NMIAL Outbound feature
    
    @BookSlot_1.1
    Scenario: To verify Book slot with Single VT Single shipment
-   When I login with "NMIAL Agent" ACS Agent user given in "Login" sheet for Export module
-  #When launch browser for GHA application and login with "GHA" ACS GHA user given in "Login" sheet for Export module
-  #When I login with "GHA" ACS GHA credentials
+ #  When I login with "NMIAL Agent" ACS Agent user given in "Login" sheet for Export module
+ # When launch browser for GHA application and login with "GHA" ACS GHA user given in "Login" sheet for Export module
+  When I login with "GHA" ACS GHA credentials
    When select CTO popup screen Ok button of Export
    When click on 1 Copy Master AWB icon of Export
    When click on Yes button of Copy AWB Confirmation button of Export

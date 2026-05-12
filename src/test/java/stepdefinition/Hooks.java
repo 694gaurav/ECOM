@@ -93,7 +93,7 @@ public class Hooks {
 		ss = new ScreenShotMethod(driver);
 		ss.ReportScreenshot(driver, sc, FilePath);		
 		Thread.sleep(2000);		
-		driver.quit();			
+	//	driver.quit();			
 		System.out.println(" <----------------------- Run After the Scenario ------------------------->");
 		
 	}
@@ -101,7 +101,7 @@ public class Hooks {
 	@After(order=0)
 	public void CloseBrowser()
 	{
-		driver.quit();		
+	//	driver.quit();		
 		System.out.println(" <----------------------- Scenario End ------------------------->");
 	}
 	
