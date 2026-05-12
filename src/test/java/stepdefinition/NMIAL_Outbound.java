@@ -50,8 +50,14 @@ public class NMIAL_Outbound {
 		Entity = entity;
 		TestDataReader.ReadLoginDetails(Entity);
 		Thread.sleep(8000);
-		wm.VisibilityOfElementExplicityWait(driver, Nmial_Outbound.Authentication_Popup, 30);
-		Nmial_Outbound.Authentication_Popup.click();
+//		try {
+//		wm.VisibilityOfElementExplicityWait(driver, Nmial_Outbound.Authentication_Popup, 30);
+//		Nmial_Outbound.Authentication_Popup.click();
+//		}
+//		catch(Exception e) {
+//			System.out.println("No Popup");
+//			
+//		}
 		Thread.sleep(8000);
 		wm.VisibilityOfElementExplicityWait(driver, loginScreen.nmialLogin_Btn, 30);
         wm.scrollTillElement(driver, loginScreen.nmialLogin_Btn);
