@@ -10,7 +10,7 @@ public class Constants {
 
 	public static final String MasterDataSheet="Type";
 	public static final String ChromeDriverPath = "Drivers/chromedriver.exe";
-	public static final String TestDataFile = "TestData/AdaniAMD_TestData.xlsx";
+	public static final String TestDataFile = "TestData/ECom_Inbound.xlsx";
 	//public static final String URL="https://acsdemo.upliftindia.com/ACS_AMD_UAT/UI/Upliftlogin.aspx";
 	
 //	public static final String URL="https://acsadaniuat.kalelogistics.com/ACS_NMIAL_UAT/UI/Upliftlogin.aspx";
