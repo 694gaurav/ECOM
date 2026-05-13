@@ -279,7 +279,7 @@ public class ECOM_Outbound extends Pages.BasePage {
     public WebElement Consignee_iframe;
     @FindBy(xpath="//div[@id='ctl00_containerfluidDivid2']//div[@id='ctl00_hldPage_uplShipCons']//input[@id='ctl00_hldPage_btnSaveShipConsignee']")
     public WebElement SaveConsignee_Btn;
-    @FindBy(xpath="//td[@id='ctl00_hldPage_idconsignee']//table//tr//td[2]//input[@id='ctl00_hldPage_txtSearchConsigneeName'][@class='createbol-txtbox']")
+    @FindBy(xpath="//*[@name='ctl00$hldPage$txtConsigneeDOM']")
     public WebElement ConsigneeName_Tb;
     @FindBy(xpath="//li[@class='ui-menu-item']/div")
     public WebElement ConsigneeName_List;

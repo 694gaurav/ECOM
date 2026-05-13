@@ -129,7 +129,7 @@ public class NMIAL_Outbound_XPath extends Pages.BasePage {
 	@FindBy(xpath="//div[@class='menu']/span")
 	public WebElement Logout_Menu;
 	
-	@FindBy(xpath="//a[contains(text(),'Log Out')]")
+	@FindBy(xpath="//*[@id='ctl00_LinkButton6']")
 	public WebElement Logout_Icon;
 	
 	@FindBy(xpath="//input[@id='ctl00_hldPage_grdMAWB_ctl02_hrefCreateBIALTSP']")
@@ -141,9 +141,9 @@ public class NMIAL_Outbound_XPath extends Pages.BasePage {
 	public WebElement TransactionPwd_Inbound_Tb;
 	@FindBy(xpath="//input[@id='ctl00_hldPage_btnPayNow']")
 	public WebElement PayNow_Btn;
-	@FindBy(xpath="//input[@id='ctl00_hldPage_btnTSPConfirm']")
+	@FindBy(xpath="//input[@name='ctl00$hldPage$btnTSPConfirm']")
 	public WebElement YesPayNow_Popup_Btn;
-	@FindBy(xpath="//input[@id='ctl00_hldPage_Button6']")
+	@FindBy(xpath="//input[@name='ctl00$hldPage$btnGenerateTokenFromTSPConfirm']")
 	public WebElement OkTspGenerated_Btn;
 	
 	@FindBy(xpath="//input[@id='ctl00_hldPage_grdMAWB_ctl02_ImgBookSlot']")

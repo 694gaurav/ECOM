@@ -119,7 +119,7 @@ public class Login_Screen extends BasePage {
 		Username_Tb.sendKeys(usr, Keys.TAB);
 		Pwd_Tb.sendKeys(pwd, Keys.TAB);
 		Thread.sleep(3000);
-		NmialCaptcha_Tb.click();
+	//	NmialCaptcha_Tb.click();
 		Thread.sleep(3000);
 
 		a.moveToElement(nmialLogin_Btn).click(nmialLogin_Btn).build().perform();
