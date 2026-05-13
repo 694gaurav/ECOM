@@ -8,9 +8,11 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "Features/ECOM_Outbound.feature",
+        features = "Features",
         glue = "stepdefinition",
-        tags = "@AdaniNMIAL_001",
+        
+        tags = "@NonEShipment_1.1",
+        
         monochrome = true,
         plugin = {
                 "pretty",

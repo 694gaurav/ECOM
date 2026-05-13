@@ -16,7 +16,7 @@ import io.cucumber.junit.CucumberOptions;
 	                		 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 	                		 "rerun:Rerun/rerun1.txt" } ,
 	                 	
-	                 tags ="NMIAL_Outbound"
+	                 tags ="AdaniNMIAL_01"
 	                 )
 	
 public class TestRunner {

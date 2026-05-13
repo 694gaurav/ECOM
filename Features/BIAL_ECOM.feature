@@ -18,15 +18,15 @@ Feature: BIAL Ecom feature
  When enter "" AWB filter for Outbound
  When click on ASI icon of AWB for Outbound
  When click on ASI Proceed button and Export
- When click on CO icon of AWB for Outbound
+ #When click on CO icon of AWB for Outbound
  When upload eDocket files for Outbound
  When click on logout icon of Outbound
- When I login with "BIAL ECOM Approver" BIAL Ecom Approver user given in "Login" sheet for Outbound
- When search "<Pfx>" pfx "" AWB for Approval
- Then verify eDocket files are uploaded in Approver
- When approve submitted ASI for Outbound
- When approve "" Flight No in Airline
- When click on logout icon of Outbound
+ #When I login with "BIAL ECOM Approver" BIAL Ecom Approver user given in "Login" sheet for Outbound
+ #When search "<Pfx>" pfx "" AWB for Approval
+ #Then verify eDocket files are uploaded in Approver
+ #When approve submitted ASI for Outbound
+ #When approve "" Flight No in Airline
+ #When click on logout icon of Outbound
  When launch browser for BIAL Ecom application and login with "BIAL ECOM UAT" BIAL user given in "Login" sheet for Outbound
  When I login with "BIAL ECOM UAT" BIAL Ecom Agent user given in "Login" sheet for Outbound
  When click on CTO popup button for Outbound

@@ -43,6 +43,8 @@ import java.util.Set;
 
 import javax.swing.JFrame;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.*;
 import java.time.Duration;
 
@@ -50,6 +52,9 @@ import Pages.ACS_GHA_XPath;
 
 
 public class Test_BialEcom {
+	   String sel_Dir= System.getProperty("user.dir")+"\\TestData";
+
+	
 	Actions a= new Actions(driver);
 	String nop= wm.RandomNo(1), GrWt="10";
 	String awb= wm.Random_awbNo();
@@ -59,8 +64,7 @@ public class Test_BialEcom {
     String flight="6e"+wm.RandomNo(4);
     String flightNo= flight.substring(2);
    
-	
-
+   
 	@When("launch browser for BIAL Ecom application and login with {string} BIAL user given in {string} sheet for Outbound")
 	public void launch_browser_for_bial_ecom_application_and_login_with_bial_user_given_in_sheet_for_outbound(String entity, String sheetName) throws Throwable {
 		String Ecom_URL= "https://bialuat.cargobyblr.in/BIAL_ACS_UAT/UI/Upliftlogin.aspx";
@@ -171,17 +175,24 @@ public class Test_BialEcom {
         typeDD.selectByIndex(1);
         Select Commodity= new Select(ECOM_Outbound.CommodityType_DD);
         Commodity.selectByIndex(1);
-        ECOM_Outbound.AddConsignee_Icon.click();		Thread.sleep(3000);
-        driver.switchTo().frame(ECOM_Outbound.Consignee_iframe);
+//        ECOM_Outbound.AddConsignee_Icon.click();		Thread.sleep(3000);
+//        driver.switchTo().frame(ECOM_Outbound.Consignee_iframe);
 		  Thread.sleep(3000);
-		
-        ECOM_Outbound.ConsigneeName_Tb.sendKeys("OMEGA"+" "+ "SHIPPER", Keys.BACK_SPACE);
-		  Thread.sleep(8000);
-//	       ECOM_Outbound.ConsigneeName_Tb.sendKeys(Keys.BACK_SPACE);
-//	       Thread.sleep(8000);
+		  ECOM_Outbound.ConsigneeName_Tb.click();
+        ECOM_Outbound.ConsigneeName_Tb.sendKeys("OMEGA"+" "+ "SHIPPE");
+		  Thread.sleep(2000);
+	        ECOM_Outbound.ConsigneeName_Tb.sendKeys("R");
+	        Thread.sleep(2000);
+	    	Robot rbt = new Robot();
+
+	    	rbt.keyPress(KeyEvent.VK_DOWN);
+	    	rbt.keyPress(KeyEvent.VK_DOWN);
+	    	Thread.sleep(2000);
+	       ECOM_Outbound.ConsigneeName_List.click();
+	       Thread.sleep(3000);
 
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //        List<WebElement> suggestions =  wait.until(
 //                ExpectedConditions.visibilityOfAllElementsLocatedBy(
 //                        By.xpath("//li[@class='ui-menu-item']/div"))
@@ -191,10 +202,10 @@ public class Test_BialEcom {
 //        if (suggestions.get(0).getText().contains("OMEGA SHIPPERS")) {
 //        	suggestions.get(0).click();}
 
-		wm.scrollTillElement(driver, ECOM_Outbound.SaveConsignee_Btn); 
-		  Thread.sleep(3000);
-
-		driver.switchTo().defaultContent();
+//		wm.scrollTillElement(driver, ECOM_Outbound.SaveConsignee_Btn); 
+//		  Thread.sleep(3000);
+//
+//		driver.switchTo().defaultContent();
 		
 		  
 //WebElement okBtn = wait.until(
@@ -205,7 +216,7 @@ public class Test_BialEcom {
 //
 //okBtn.click();
 //
-//		ECOM_Outbound.ConsigneeOk_Btn.click();
+	//	ECOM_Outbound.ConsigneeOk_Btn.click();
 //		  Thread.sleep(3000);
 
 	}
@@ -282,7 +293,7 @@ public class Test_BialEcom {
 		ECOM_Outbound.AddShipment_Cb.get(1).click();		   Thread.sleep(3000);
 		ECOM_Outbound.AddShipment_Cb.get(2).click();		   Thread.sleep(3000);
 		ECOM_Outbound.AddSelectedShipment_Btn.click();		   Thread.sleep(3000);
-
+		driver.switchTo().defaultContent();
 	}
 	
 	@When("enter {int} Vehicle details and click on Generate Token for NonEShipment Outbound")
@@ -676,7 +687,9 @@ public class Test_BialEcom {
 	
 	@When("enter Vehicle details and click on Generate Token for Add NonEShipment Outbound")
 	public void enter_vehicle_details_and_click_on_generate_token_for_add_non_e_shipment_outbound() throws Throwable {
-		 Thread.sleep(3000);
+		wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.VehicleNo_Tb, 30);
+
+		Thread.sleep(3000);
 	        wm.scrollTillElement(driver, ECOM_Outbound.VehicleNo_Tb);
 			ECOM_Outbound.VehicleNo_Tb.sendKeys("MH01"+wm.RandomNo(4), Keys.END);        Thread.sleep(1000);
 		    ECOM_Outbound.DriverLicenseNo_Tb.sendKeys("D"+wm.RandomNo(5), Keys.END);        Thread.sleep(1000);
@@ -687,7 +700,7 @@ public class Test_BialEcom {
 //		    ECOM_Outbound.NOP1_Tb.sendKeys("1", Keys.END);
 		    ECOM_Outbound.GrossWeight1_Tb.sendKeys(Keys.CONTROL+"A", Keys.BACK_SPACE);
 
-		    ECOM_Outbound.GrossWeight1_Tb.sendKeys("5", Keys.END);Thread.sleep(3000);
+		    ECOM_Outbound.GrossWeight1_Tb.sendKeys("30", Keys.END);Thread.sleep(3000);
 		    ECOM_Outbound.TokenRemarks_Tb.sendKeys("ok", Keys.END);
 			   Thread.sleep(3000);
 		    wm.scrollTillElement(driver, ECOM_Outbound.GenerateToken_Btn);
@@ -846,7 +859,7 @@ public class Test_BialEcom {
        document1DD.selectByIndex(1);
 	   Thread.sleep(3000);
 
-       ECOM_Outbound.ChooseFile1_Btn.sendKeys("D:\\pdf1.pdf");
+       ECOM_Outbound.ChooseFile1_Btn.sendKeys(sel_Dir+"\\pdf1.pdf");
 	   Thread.sleep(3000);
 	   ECOM_Outbound.eDocketUpload_Btn.click();
 	   Thread.sleep(3000);

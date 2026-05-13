@@ -65,6 +65,7 @@ public class NMIAL_Outbound {
 		System.out.println("pwd= " + Password);
 		// loginScreen.isLoginScreenDisplayed();
 		loginScreen.Nmial_Login(Entity, Username, Password);
+		
 		Thread.sleep(8000);
 
 	}
@@ -105,8 +106,8 @@ public class NMIAL_Outbound {
 	@When("enter {string} Flight No and select Flight Date of Export")
 	public void enter_flight_no_and_select_flight_date_of_export(String value) throws Throwable {
 		Nmial_Outbound.Origin_Tb.sendKeys(Keys.CONTROL+"A", Keys.BACK_SPACE);
-		Nmial_Outbound.Origin_Tb.sendKeys("NMI", Keys.TAB);
-		
+		Nmial_Outbound.Origin_Tb.sendKeys("BLR", Keys.TAB);
+
 		Nmial_Outbound.Destination_Tb.sendKeys(Keys.CONTROL+"A", Keys.BACK_SPACE);
 		Nmial_Outbound.Destination_Tb.sendKeys("BOM", Keys.TAB);
 		
@@ -186,9 +187,9 @@ public class NMIAL_Outbound {
 		Entity = entity;
 		TestDataReader.ReadLoginDetails(Entity);
 		Thread.sleep(8000);
-		wm.VisibilityOfElementExplicityWait(driver, Nmial_Outbound.Authentication_Popup, 30);
-		Nmial_Outbound.Authentication_Popup.click();
-		Thread.sleep(8000);
+//		wm.VisibilityOfElementExplicityWait(driver, Nmial_Outbound.Authentication_Popup, 30);
+//		Nmial_Outbound.Authentication_Popup.click();
+//		Thread.sleep(8000);
 
 		System.out.println("usr= " + Username);
 		System.out.println("pwd= " + Password);
@@ -297,6 +298,11 @@ public class NMIAL_Outbound {
 	@When("I login with {string} ACS GHA credentials")
 	public void i_login_with_acs_gha_credentials(String value) {
 		
+	}
+	
+	@When("Navigate to galaxy UAT adani")
+	public void Navigate_to_galaxy_UAT_adani() {
+		driver.navigate().to("https://galaxycmsuat.adani.com/GHAAdaniNMIDOMUAT/DashBoard.aspx#");
 	}
 	
 	@When("capture generated AWB details for Export")

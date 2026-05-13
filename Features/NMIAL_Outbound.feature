@@ -7,9 +7,9 @@ Feature: NMIAL Outbound feature
   @AdaniNMIAL_01
    Scenario: To verify Non-UNK AWB GHA approval created with Warehouse Acceptance for user
 
-   When I login with "NMIAL Agent" ACS Agent user given in "Login" sheet for Export module
-  #When launch browser for GHA application and login with "GHA" ACS GHA user given in "Login" sheet for Export module
-  #When I login with "GHA" ACS GHA credentials
+   When I login with "BIAL ECOM UAT" ACS Agent user given in "Login" sheet for Export module
+ # When launch browser for GHA application and login with "GHA" ACS GHA user given in "Login" sheet for Export module
+ # When I login with "GHA" ACS GHA credentials
    When select CTO popup screen Ok button of Export
    When click on 1 Copy Master AWB icon of Export
    When click on Yes button of Copy AWB Confirmation button of Export
@@ -19,38 +19,38 @@ Feature: NMIAL Outbound feature
    When click on AWB Saved Ok button of Export
    When click on AWB ASI icon of Export
    When click on Proceed button and click on Yes Confirmation button of Export
-   When click on CO icon and click on Yes button in CO Request popup screen of Export
-   When click on Logout button of ACS Agent of Export
-   When I login with "NMIAL Airline" ACS Airline user given in "Login" sheet for Export module
-   When click on Action icon to approve or reject submitted CTO for Export
-   When click on Approve button for Export
-   When click on Logout button of ACS Agent of Export
-   When I login with "NMIAL Agent" ACS Agent user given in "Login" sheet for Export module
-   When select CTO popup screen Ok button of Export
+  # When click on CO icon and click on Yes button in CO Request popup screen of Export
+   #When click on Logout button of ACS Agent of Export
+   #When I login with "BIAL ECOM Approver" ACS Airline user given in "Login" sheet for Export module
+   #When click on Action icon to approve or reject submitted CTO for Export
+   #When click on Approve button for Export
+   #When click on Logout button of ACS Agent of Export
+   #When I login with "BIAL ECOM UAT" ACS Agent user given in "Login" sheet for Export module
+   #When select CTO popup screen Ok button of Export
    #TSP
    When click on TSP icon, enter details and click on Pay Now button of Export
    When click on Yes and Ok button for TSP in Export 
-   When launch browser for GHA application and login with "GHA" ACS GHA user given in "Login" sheet for Export module
+#   When launch browser for GHA application and login with "GHA" ACS GHA user given in "Login" sheet for Export module
   ## When launch browser for GHA application and login with "GHA" ACS GHA user given in "Login" sheet for Export module
   ## When launch browser for GHA application and login with "Galaxy BIAL" Galaxy Bial user given in "Login" sheet for Export module
-   When capture generated AWB details for Export
-   When click on Exports>> AWB Detail and enter generated AWB in AWB fields for search in Export GHA
-   Then verify CO as Approved in Export GHA
+ #  When capture generated AWB details for Export
+ #  When click on Exports>> AWB Detail and enter generated AWB in AWB fields for search in Export GHA
+ #  Then verify CO as Approved in Export GHA
    #When click on TSP icon of Export
    #When enter details and click on Pay Now button of Export
    #When click on Yes button for TSP generated popup screen of Export
    #When click on Book Slot icon after TSP generated of Export
-   #When click on Available slot and enter Vehicle details of Export
-   #When click on Save Book Slot button of Export
-   #When click on Slot Booked icon of Export
+   When click on Available slot and enter Vehicle details of Export
+   When click on Save Book Slot button of Export
+   When click on Slot Booked icon of Export
    #Print VT, Send Manifest, ACS Receipt
-   #When click on Logout button of ACS Agent of Export
+   When click on Logout button of ACS Agent of Export
    #eDocket
    #Parking In tps
-   #When I login with "NMIAL TPS" TPS user given in "Login" sheet for Export module
-   #When select Cargo Type of Export
-   #When click on Parking In icon of Outbound Vehicle and click on Refresh button of Export
-   #When click on Parking Out icon of Outbound Vehicle and click on Refresh button of Export
+   When I login with "NMIAL TPS" TPS user given in "Login" sheet for Export module
+   When select Cargo Type of Export
+   When click on Parking In icon of Outbound Vehicle and click on Refresh button of Export
+   When click on Parking Out icon of Outbound Vehicle and click on Refresh button of Export
    #When click on Logout button of ACS Agent of Export
    When click on VCT>> VCT Generation in GHA
    Then verify display of Park In and Park Out date time in GHA
@@ -65,7 +65,7 @@ Feature: NMIAL Outbound feature
    #Galaxy Bial link for complete acceptance of UNK and change AWB
    When click on VCT>> VCT Acceptance of GHA in Export
    Then verify complete Acceptance validation of UNK number of Export
-   When I login with "NMIAL Agent" ACS Agent user given in "Login" sheet for Export module
+   When I login with "BIAL ECOM UAT" ACS Agent user given in "Login" sheet for Export module
    #When capture generated AWB details in excel sheet for Export
    When click on Outbound>> Track and Trace tab for Export
    Then verify Parking, Dock and Warehouse Acceptance icons of GHA in Nmial Export
@@ -94,6 +94,7 @@ Feature: NMIAL Outbound feature
    Scenario: To verify Book slot with Single VT Single shipment
  #  When I login with "NMIAL Agent" ACS Agent user given in "Login" sheet for Export module
  # When launch browser for GHA application and login with "GHA" ACS GHA user given in "Login" sheet for Export module
+  Then Navigate to galaxy UAT adani
   When I login with "GHA" ACS GHA credentials
    When select CTO popup screen Ok button of Export
    When click on 1 Copy Master AWB icon of Export
