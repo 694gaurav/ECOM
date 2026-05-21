@@ -1930,8 +1930,12 @@ public class Test_BialEcom {
 		Thread.sleep(3000); 
 		driver.switchTo().frame(Nmial_Outbound.PageFrame);
 		Thread.sleep(3000); 
+		 Nmial_Outbound.ATA_Date_Tb.click();
+		 Thread.sleep(3000); 
+	//	 Nmial_Outbound.ATA_Date_Tb.sendKeys("15/05/2026");
 	   Nmial_Outbound.ATA_Date_Tb.sendKeys(wm.CurrentDate("dd/MM/yyyy"), Keys.TAB);
-	    Thread.sleep(3000); 
+	   System.out.println("Current Date: " + wm.CurrentDate("dd/MM/yyyy"));
+	    Thread.sleep(30000); 
 	   Nmial_Outbound.ATA_Time_Tb.sendKeys(value1, Keys.END);
 	    Thread.sleep(3000); 
 	    Nmial_Outbound.RecordATA_Btn.click();
@@ -1948,6 +1952,7 @@ public class Test_BialEcom {
 	  		System.out.println(driver.getTitle());
 	  		
 	  	Nmial_Outbound.DocReceiveDate_Tb.sendKeys(wm.CurrentDate("dd/MM/yyyy"), Keys.END);
+	  	System.out.println("Current Date: " + wm.CurrentDate("dd/MM/yyyy"));
 	  	Nmial_Outbound.DocReceiveTime_Tb.sendKeys(value2+"05", Keys.END);
 	    Thread.sleep(10000); 
 
@@ -2156,7 +2161,7 @@ public class Test_BialEcom {
 		    
 
 		Nmial_Outbound.SaveDiscrepancy_Btn.click();
-	    Thread.sleep(3000); 	    
+	    Thread.sleep(8000); 	    
         wait.until(ExpectedConditions.alertIsPresent());
    // Now handle the alert in that popup window
         wait.until(ExpectedConditions.alertIsPresent());
@@ -2164,6 +2169,7 @@ public class Test_BialEcom {
         alert.accept();   // Clicks OK / Accept
    // Nmial_Outbound.CancelDamage_Btn.click();
         Thread.sleep(8000); 
+        alert.accept(); 
         driver.switchTo().window((String) windowHandles[0]);
         Thread.sleep(8000); 
 
@@ -2409,7 +2415,7 @@ public class Test_BialEcom {
 	public void click_on_inbound_tab_select_flight_for_asi_tsp_and_generate_token_for_ecom_gha() throws Throwable {
 		ECOM_Outbound.Inbound_Tab.click();	    Thread.sleep(8000); 
         wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.AsiADO_Icon, 30);
-		
+        Thread.sleep(8000);
 		for(int j=0;j<5;j++) {
           if(wm.isElementPresent(driver, ECOM_Outbound.ProceedWdoAWB_Btn)) {
       		   AwbGenerated= ECOM_Outbound.AwbWDO_Lbl.get(j).toString();
@@ -2431,7 +2437,12 @@ public class Test_BialEcom {
                ECOM_Outbound.TspGenerateToken_Btn.click();Thread.sleep(3000);
                break;
           }
-        
+      	Thread.sleep(3000);
+      	 wm.scrollTillElement(driver, ECOM_Outbound.GenerateToken_Btn);
+ 	    ECOM_Outbound.GenerateToken_Btn.click();
+ 		   Thread.sleep(3000);
+ 		ECOM_Outbound.GenerateTokenOk_Btn.click();
+ 		   Thread.sleep(3000);
 	    ECOM_Outbound.VehicleNo_Tb.sendKeys("MH01"+wm.RandomNo(4), Keys.END);   Thread.sleep(3000);
 	    ECOM_Outbound.DriverLicenseNo_Tb.sendKeys("D"+wm.RandomNo(5), Keys.END);	   Thread.sleep(3000);
 	    ECOM_Outbound.DriverName_Tb.sendKeys("tester", Keys.END);  Thread.sleep(3000);
