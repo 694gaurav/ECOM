@@ -493,6 +493,21 @@ public class ECOM_Outbound extends Pages.BasePage {
     public List<WebElement> Inbound_Cb;
     @FindBy(xpath="//input[@id='ctl00_hldPage_grdADO_ctl02_txtChargeWt']")
     public WebElement ChWt_Tb;
+    
+    @FindBy(xpath="//input[@id='ctl00_hldPage_grdADO_ctl03_txtChargeWt']")
+    public WebElement ChWt_Tb2;
+    
+    @FindBy(xpath="//input[@id='ctl00_hldPage_grdADO_ctl04_txtChargeWt']")
+    public WebElement ChWt_Tb3;
+    
+    @FindBy(xpath="//input[@id='ctl00_hldPage_grdADO_ctl05_txtChargeWt']")
+    public WebElement ChWt_Tb4;
+    
+    @FindBy(xpath="//input[@id='ctl00_hldPage_grdADO_ctl06_txtChargeWt']")
+    public WebElement ChWt_Tb5;
+    
+    
+    
     @FindBy(xpath="//input[@id='ctl00_hldPage_btnApprovedADO']")
     public WebElement ApproveDeliveryOrder_Btn;
     @FindBy(xpath="//input[@id='ctl00_hldPage_Button6']")
@@ -503,6 +518,18 @@ public class ECOM_Outbound extends Pages.BasePage {
     public List<WebElement> AsiADO_Icon;
     @FindBy(xpath="//table[@id='ctl00_hldPage_grdMAWB']//tr/td[14]/input[@type='image']")
     public List<WebElement> TspADO_Icon;
+    
+    @FindBy(xpath="//*[@name='ctl00$hldPage$grdMAWB$ctl02$imgbTSPBOE']")
+    public WebElement TSP1;
+    @FindBy(xpath="//*[@name='ctl00$hldPage$grdMAWB$ctl03$imgbTSPBOE']")
+    public WebElement TSP2;
+    @FindBy(xpath="//*[@name='ctl00$hldPage$grdMAWB$ctl04$imgbTSPBOE']")
+    public WebElement TSP3;
+    @FindBy(xpath="//*[@name='ctl00$hldPage$grdMAWB$ctl05$imgbTSPBOE']")
+    public WebElement TSP4;
+    @FindBy(xpath="//*[@name='ctl00$hldPage$grdMAWB$ctl06$imgbTSPBOE']")
+    public WebElement TSP5;
+    
     @FindBy(xpath="//input[@id='ctl00_hldPage_txtTSPPassword']")
     public WebElement TspAdoTransaction_Tb;
     @FindBy(xpath="//input[@id='ctl00_hldPage_btnTSPPay']")
@@ -545,6 +572,99 @@ public class ECOM_Outbound extends Pages.BasePage {
     @FindBy(xpath="//input[@id='ctl00_hldPage_btnGo']")
     public WebElement BagGo_Btn;
 
+    @FindBy(xpath = "//*[@name='ctl00$hldPage$grdMAWB$ctl02$imgASISBStatus']")
+	public WebElement ASIStatus_Icon1;
+    
+    @FindBy(xpath = "//*[@name='ctl00$hldPage$grdMAWB$ctl03$imgASISBStatus']")
+   	public WebElement ASIStatus_Icon2;
+    
+    @FindBy(xpath = "//*[@name='ctl00$hldPage$grdMAWB$ctl04$imgASISBStatus']")
+   	public WebElement ASIStatus_Icon3;
+    
+    @FindBy(xpath = "//*[@name='ctl00$hldPage$grdMAWB$ctl05$imgASISBStatus']")
+   	public WebElement ASIStatus_Icon4;
+    
+    @FindBy(xpath = "//*[@name='ctl00$hldPage$grdMAWB$ctl06$imgASISBStatus']")
+   	public WebElement ASIStatus_Icon5;
+    
+   
+	@FindBy(xpath = "")
+	public WebElement A2;
+	
+	@FindBy(xpath = "")
+	public WebElement A3;
+	
+	@FindBy(xpath = "")
+	public WebElement A4;
+	
+	@FindBy(xpath = "")
+	public WebElement A5;
+	
+	@FindBy(xpath = "")
+	public WebElement A6;
+	
+	@FindBy(xpath = "")
+	public WebElement A7;
+	
+	@FindBy(xpath = "")
+	public WebElement A8;
+	
+	@FindBy(xpath = "")
+	public WebElement A9;
+	
+	@FindBy(xpath = "")
+	public WebElement A11;
+	
+	@FindBy(xpath = "")
+	public WebElement A21;
+	
+	@FindBy(xpath = "")
+	public WebElement A31;
+	
+	@FindBy(xpath = "")
+	public WebElement A41;
+	
+	@FindBy(xpath = "")
+	public WebElement A51;
+	
+	@FindBy(xpath = "")
+	public WebElement A61;
+	
+	@FindBy(xpath = "")
+	public WebElement A71;
+	
+	@FindBy(xpath = "")
+	public WebElement A8q1;
+	
+	@FindBy(xpath = "")
+	public WebElement A91;
+	
+	@FindBy(xpath = "")
+	public WebElement A12;
+	
+	@FindBy(xpath = "")
+	public WebElement A22;
+	
+	@FindBy(xpath = "")
+	public WebElement A33;
+	
+	@FindBy(xpath = "")
+	public WebElement A44;
+	
+	@FindBy(xpath = "")
+	public WebElement A55;
+	
+	@FindBy(xpath = "")
+	public WebElement A696;
+	
+	@FindBy(xpath = "")
+	public WebElement A717;
+	
+	@FindBy(xpath = "")
+	public WebElement A828;
+	
+	@FindBy(xpath = "")
+	public WebElement A969;
 
     
 

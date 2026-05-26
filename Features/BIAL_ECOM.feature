@@ -272,7 +272,7 @@ Feature: BIAL Ecom feature
   
   @Inbound_WDO
   Scenario: To verify Inbound WDO and create Flight 
- 
+  
   When I login with "BIAL ECOM Approver" BIAL Ecom Agent user given in "Login" sheet for Outbound
   When launch browser for Ecom GHA application and login with "ECOM GHA user" ECOM GHA user given in "Login" sheet for Inbound
   When click on Masters>> More>> Flight> Details in ECOM GHA
