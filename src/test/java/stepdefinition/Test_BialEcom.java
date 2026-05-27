@@ -59,7 +59,7 @@ public class Test_BialEcom {
 	String nop= wm.RandomNo(1), GrWt="10";
 	String awb= wm.Random_awbNo();
 	String originalTab = driver.getWindowHandle();
-	String AwbGenerated, Flight;
+	public String AwbGenerated, Flight;
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     String flight="6e"+wm.RandomNo(4);
     String flightNo= flight.substring(2);
@@ -1943,8 +1943,12 @@ public class Test_BialEcom {
 		Thread.sleep(3000); 
 		driver.switchTo().frame(Nmial_Outbound.PageFrame);
 		Thread.sleep(3000); 
+		 Nmial_Outbound.ATA_Date_Tb.click();
+		 Thread.sleep(3000); 
+	//	 Nmial_Outbound.ATA_Date_Tb.sendKeys("15/05/2026");
 	   Nmial_Outbound.ATA_Date_Tb.sendKeys(wm.CurrentDate("dd/MM/yyyy"), Keys.TAB);
-	    Thread.sleep(3000); 
+	   System.out.println("Current Date: " + wm.CurrentDate("dd/MM/yyyy"));
+	    Thread.sleep(30000); 
 	   Nmial_Outbound.ATA_Time_Tb.sendKeys(value1, Keys.END);
 	    Thread.sleep(3000); 
 	    Nmial_Outbound.RecordATA_Btn.click();
@@ -1961,6 +1965,7 @@ public class Test_BialEcom {
 	  		System.out.println(driver.getTitle());
 	  		
 	  	Nmial_Outbound.DocReceiveDate_Tb.sendKeys(wm.CurrentDate("dd/MM/yyyy"), Keys.END);
+	  	System.out.println("Current Date: " + wm.CurrentDate("dd/MM/yyyy"));
 	  	Nmial_Outbound.DocReceiveTime_Tb.sendKeys(value2+"05", Keys.END);
 	    Thread.sleep(10000); 
 
@@ -2169,7 +2174,7 @@ public class Test_BialEcom {
 		    
 
 		Nmial_Outbound.SaveDiscrepancy_Btn.click();
-	    Thread.sleep(3000); 	    
+	    Thread.sleep(8000); 	    
         wait.until(ExpectedConditions.alertIsPresent());
    // Now handle the alert in that popup window
         wait.until(ExpectedConditions.alertIsPresent());
@@ -2177,6 +2182,7 @@ public class Test_BialEcom {
         alert.accept();   // Clicks OK / Accept
    // Nmial_Outbound.CancelDamage_Btn.click();
         Thread.sleep(8000); 
+        alert.accept(); 
         driver.switchTo().window((String) windowHandles[0]);
         Thread.sleep(8000); 
 
@@ -2225,18 +2231,36 @@ public class Test_BialEcom {
 	    ECOM_Outbound.Inbound_Tab.click();
 	    Thread.sleep(8000); 
 
-	    for(int j=0;j<5;j++) {
-	    ECOM_Outbound.Inbound_Cb.get(j).click();Thread.sleep(3000); 
-
-	    }
-	    
+	//    for(int j=0;j<5;j++) {
+	    ECOM_Outbound.Inbound_Cb.get(0).click();Thread.sleep(5000); 
 	    ECOM_Outbound.ChWt_Tb.sendKeys(Keys.CONTROL+"A", Keys.BACK_SPACE);Thread.sleep(3000);
 	    ECOM_Outbound.ChWt_Tb.sendKeys("500", Keys.TAB);Thread.sleep(3000);
+	    
+	    ECOM_Outbound.Inbound_Cb.get(1).click();Thread.sleep(5000); 
+	    ECOM_Outbound.ChWt_Tb2.sendKeys(Keys.CONTROL+"A", Keys.BACK_SPACE);Thread.sleep(3000);
+	    ECOM_Outbound.ChWt_Tb2.sendKeys("500", Keys.TAB);Thread.sleep(3000);
+	    
+	    ECOM_Outbound.Inbound_Cb.get(2).click();Thread.sleep(5000); 
+	    ECOM_Outbound.ChWt_Tb3.sendKeys(Keys.CONTROL+"A", Keys.BACK_SPACE);Thread.sleep(3000);
+	    ECOM_Outbound.ChWt_Tb3.sendKeys("500", Keys.TAB);Thread.sleep(3000);
+	    
+	    ECOM_Outbound.Inbound_Cb.get(3).click();Thread.sleep(5000); 
+	    ECOM_Outbound.ChWt_Tb4.sendKeys(Keys.CONTROL+"A", Keys.BACK_SPACE);Thread.sleep(3000);
+	    ECOM_Outbound.ChWt_Tb4.sendKeys("500", Keys.TAB);Thread.sleep(3000);
+	    
+	    ECOM_Outbound.Inbound_Cb.get(4).click();Thread.sleep(5000); 
+	    ECOM_Outbound.ChWt_Tb5.sendKeys(Keys.CONTROL+"A", Keys.BACK_SPACE);Thread.sleep(3000);
+	    ECOM_Outbound.ChWt_Tb5.sendKeys("500", Keys.TAB);Thread.sleep(3000);
+	    
+	    
+	   
+	//    }
 	    wm.scrollTillElement(driver, ECOM_Outbound.ApproveDeliveryOrder_Btn);Thread.sleep(3000);
 	    ECOM_Outbound.ApproveDeliveryOrder_Btn.click();	    Thread.sleep(3000); 
 	    ECOM_Outbound.YesADO_Btn.click();	    Thread.sleep(8000); 
         wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.ReleasedADO_Btn, 30);
         ECOM_Outbound.ReleasedADO_Btn.click();Thread.sleep(8000);
+	
 	}
 	
 	//MLM
@@ -2422,9 +2446,193 @@ public class Test_BialEcom {
 	public void click_on_inbound_tab_select_flight_for_asi_tsp_and_generate_token_for_ecom_gha() throws Throwable {
 		ECOM_Outbound.Inbound_Tab.click();	    Thread.sleep(8000); 
         wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.AsiADO_Icon, 30);
-		
+       
+        ECOM_Outbound.ASIStatus_Icon1.click();
+	       Thread.sleep(8000);
+        ECOM_Outbound.ProceedWdoAWB_Btn.click();
+        Thread.sleep(10000);
+        ECOM_Outbound.OkAsiWdo_Btn.click();
+	       Thread.sleep(8000);
+	       
+	       ECOM_Outbound.ASIStatus_Icon2.click();
+	       Thread.sleep(8000);
+           ECOM_Outbound.ProceedWdoAWB_Btn.click();
+           Thread.sleep(10000);
+           ECOM_Outbound.OkAsiWdo_Btn.click();
+	       Thread.sleep(8000);
+	       
+	       ECOM_Outbound.ASIStatus_Icon3.click();
+	       Thread.sleep(8000);
+           ECOM_Outbound.ProceedWdoAWB_Btn.click();
+           Thread.sleep(10000);
+           ECOM_Outbound.OkAsiWdo_Btn.click();
+	       Thread.sleep(8000);
+	       
+	       ECOM_Outbound.ASIStatus_Icon4.click();
+	       Thread.sleep(8000);
+           ECOM_Outbound.ProceedWdoAWB_Btn.click();
+           Thread.sleep(10000);
+           ECOM_Outbound.OkAsiWdo_Btn.click();
+	       Thread.sleep(8000);
+	       
+	       ECOM_Outbound.ASIStatus_Icon5.click();
+	       Thread.sleep(8000);
+           ECOM_Outbound.ProceedWdoAWB_Btn.click();
+           Thread.sleep(10000);
+           ECOM_Outbound.OkAsiWdo_Btn.click();
+	       Thread.sleep(8000);
+	       
+	         wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.TSP2, 30);
+               ECOM_Outbound.TSP2.click();
+		       TestDataReader.ReadLoginDetails("BIAL ECOM UAT");
+		       Thread.sleep(5000);
+		       wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.TspAdoTransaction_Tb, 30);
+		       System.out.println("pwd= " + Password);
+               ECOM_Outbound.TspAdoTransaction_Tb.sendKeys(Password, Keys.END);
+               ECOM_Outbound.TspAdoPayNow_Btn.click();Thread.sleep(3000);
+               wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.TspAdoYes_Btn, 30);
+               ECOM_Outbound.TspAdoYes_Btn.click();Thread.sleep(5000);
+               wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.TspGenerateToken_Btn, 30);
+          	 ECOM_Outbound.TspGenerateToken_Btn.click();Thread.sleep(3000);
+           	Thread.sleep(3000);
+            ECOM_Outbound.VehicleNo_Tb.sendKeys("MH01"+wm.RandomNo(4), Keys.END);   Thread.sleep(3000);
+    	    ECOM_Outbound.DriverLicenseNo_Tb.sendKeys("D"+wm.RandomNo(5), Keys.END);	   Thread.sleep(3000);
+    	    ECOM_Outbound.DriverName_Tb.sendKeys("tester", Keys.END);  Thread.sleep(3000);
+    	    ECOM_Outbound.DriverMobileno_Tb.sendKeys("982"+wm.RandomNo(7), Keys.END);   Thread.sleep(3000);
+    	    ECOM_Outbound.AgentMobileno_Tb.sendKeys("982"+wm.RandomNo(7), Keys.END);   Thread.sleep(3000);
+    	    ECOM_Outbound.TokenRemarks_Tb.sendKeys("ok", Keys.END);	   Thread.sleep(3000);
+    		Thread.sleep(3000);
+
+    	    wm.scrollTillElement(driver, ECOM_Outbound.GenerateToken_Btn);
+    	    wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.GenerateToken_Btn, 30);
+    	    ECOM_Outbound.GenerateToken_Btn.click();
+    		   Thread.sleep(3000);
+    		   wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.GenerateTokenOk_Btn, 30);
+    		ECOM_Outbound.GenerateTokenOk_Btn.click();
+    		   Thread.sleep(5000);
+           	
+	       
+	      
+	       
+	         wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.TSP3, 30);
+               ECOM_Outbound.TSP3.click();
+		       TestDataReader.ReadLoginDetails("BIAL ECOM UAT");
+		       Thread.sleep(5000);
+		       wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.TspAdoTransaction_Tb, 30);
+		       System.out.println("pwd= " + Password);
+               ECOM_Outbound.TspAdoTransaction_Tb.sendKeys(Password, Keys.END);
+               ECOM_Outbound.TspAdoPayNow_Btn.click();Thread.sleep(6000);
+               wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.TspAdoYes_Btn, 30);
+               ECOM_Outbound.TspAdoYes_Btn.click();Thread.sleep(6000);
+               wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.TspGenerateToken_Btn, 30);
+          	 ECOM_Outbound.TspGenerateToken_Btn.click();Thread.sleep(6000);
+           	Thread.sleep(3000);
+            ECOM_Outbound.VehicleNo_Tb.sendKeys("MH01"+wm.RandomNo(4), Keys.END);   Thread.sleep(3000);
+    	    ECOM_Outbound.DriverLicenseNo_Tb.sendKeys("D"+wm.RandomNo(5), Keys.END);	   Thread.sleep(3000);
+    	    ECOM_Outbound.DriverName_Tb.sendKeys("tester", Keys.END);  Thread.sleep(3000);
+    	    ECOM_Outbound.DriverMobileno_Tb.sendKeys("982"+wm.RandomNo(7), Keys.END);   Thread.sleep(3000);
+    	    ECOM_Outbound.AgentMobileno_Tb.sendKeys("982"+wm.RandomNo(7), Keys.END);   Thread.sleep(3000);
+    	    ECOM_Outbound.TokenRemarks_Tb.sendKeys("ok", Keys.END);	   Thread.sleep(3000);
+    		Thread.sleep(3000);
+
+    	    wm.scrollTillElement(driver, ECOM_Outbound.GenerateToken_Btn);
+    	    ECOM_Outbound.GenerateToken_Btn.click();
+    		   Thread.sleep(3000);
+    		ECOM_Outbound.GenerateTokenOk_Btn.click();
+    		   Thread.sleep(3000);
+           	
+	       
+	      
+	       
+	         wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.TSP4, 30);
+               ECOM_Outbound.TSP4.click();
+		       TestDataReader.ReadLoginDetails("BIAL ECOM UAT");
+		       Thread.sleep(8000);
+		       wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.TspAdoTransaction_Tb, 30);
+		       System.out.println("pwd= " + Password);
+               ECOM_Outbound.TspAdoTransaction_Tb.sendKeys(Password, Keys.END);
+               ECOM_Outbound.TspAdoPayNow_Btn.click();Thread.sleep(6000);
+               ECOM_Outbound.TspAdoYes_Btn.click();Thread.sleep(6000);
+          	 ECOM_Outbound.TspGenerateToken_Btn.click();Thread.sleep(3000);
+           	Thread.sleep(3000);
+            ECOM_Outbound.VehicleNo_Tb.sendKeys("MH01"+wm.RandomNo(4), Keys.END);   Thread.sleep(3000);
+    	    ECOM_Outbound.DriverLicenseNo_Tb.sendKeys("D"+wm.RandomNo(5), Keys.END);	   Thread.sleep(3000);
+    	    ECOM_Outbound.DriverName_Tb.sendKeys("tester", Keys.END);  Thread.sleep(3000);
+    	    ECOM_Outbound.DriverMobileno_Tb.sendKeys("982"+wm.RandomNo(7), Keys.END);   Thread.sleep(3000);
+    	    ECOM_Outbound.AgentMobileno_Tb.sendKeys("982"+wm.RandomNo(7), Keys.END);   Thread.sleep(3000);
+    	    ECOM_Outbound.TokenRemarks_Tb.sendKeys("ok", Keys.END);	   Thread.sleep(3000);
+    		Thread.sleep(6000);
+
+    	    wm.scrollTillElement(driver, ECOM_Outbound.GenerateToken_Btn);
+    	    ECOM_Outbound.GenerateToken_Btn.click();
+    		   Thread.sleep(6000);
+    		ECOM_Outbound.GenerateTokenOk_Btn.click();
+    		   Thread.sleep(3000);
+           	
+	       
+	      
+	       
+	         wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.TSP5, 30);
+	         Thread.sleep(5000);
+               ECOM_Outbound.TSP5.click();
+		       TestDataReader.ReadLoginDetails("BIAL ECOM UAT");
+		       Thread.sleep(8000);
+		       wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.TspAdoTransaction_Tb, 30);
+		       System.out.println("pwd= " + Password);
+               ECOM_Outbound.TspAdoTransaction_Tb.sendKeys(Password, Keys.END);
+               ECOM_Outbound.TspAdoPayNow_Btn.click();Thread.sleep(6000);
+               ECOM_Outbound.TspAdoYes_Btn.click();Thread.sleep(6000);
+          	 ECOM_Outbound.TspGenerateToken_Btn.click();Thread.sleep(3000);
+           	Thread.sleep(3000);
+            
+    	    ECOM_Outbound.VehicleNo_Tb.sendKeys("MH01"+wm.RandomNo(4), Keys.END);   Thread.sleep(3000);
+    	    ECOM_Outbound.DriverLicenseNo_Tb.sendKeys("D"+wm.RandomNo(5), Keys.END);	   Thread.sleep(3000);
+    	    ECOM_Outbound.DriverName_Tb.sendKeys("tester", Keys.END);  Thread.sleep(3000);
+    	    ECOM_Outbound.DriverMobileno_Tb.sendKeys("982"+wm.RandomNo(7), Keys.END);   Thread.sleep(3000);
+    	    ECOM_Outbound.AgentMobileno_Tb.sendKeys("982"+wm.RandomNo(7), Keys.END);   Thread.sleep(3000);
+    	    ECOM_Outbound.TokenRemarks_Tb.sendKeys("ok", Keys.END);	   Thread.sleep(3000);
+    		Thread.sleep(3000);
+
+    	    wm.scrollTillElement(driver, ECOM_Outbound.GenerateToken_Btn);
+    	    ECOM_Outbound.GenerateToken_Btn.click();
+    		   Thread.sleep(6000);
+    		ECOM_Outbound.GenerateTokenOk_Btn.click();
+    		   Thread.sleep(6000);
+    		   
+    		   wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.TSP1, 30);
+  	         Thread.sleep(5000);
+                 ECOM_Outbound.TSP1.click();
+  		       TestDataReader.ReadLoginDetails("BIAL ECOM UAT");
+  		       Thread.sleep(8000);
+  		       wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.TspAdoTransaction_Tb, 30);
+  		       System.out.println("pwd= " + Password);
+                 ECOM_Outbound.TspAdoTransaction_Tb.sendKeys(Password, Keys.END);
+                 ECOM_Outbound.TspAdoPayNow_Btn.click();Thread.sleep(6000);
+                 ECOM_Outbound.TspAdoYes_Btn.click();Thread.sleep(6000);
+            	 ECOM_Outbound.TspGenerateToken_Btn.click();Thread.sleep(3000);
+             	Thread.sleep(3000);
+              
+      	    ECOM_Outbound.VehicleNo_Tb.sendKeys("MH01"+wm.RandomNo(4), Keys.END);   Thread.sleep(3000);
+      	    ECOM_Outbound.DriverLicenseNo_Tb.sendKeys("D"+wm.RandomNo(5), Keys.END);	   Thread.sleep(3000);
+      	    ECOM_Outbound.DriverName_Tb.sendKeys("tester", Keys.END);  Thread.sleep(3000);
+      	    ECOM_Outbound.DriverMobileno_Tb.sendKeys("982"+wm.RandomNo(7), Keys.END);   Thread.sleep(3000);
+      	    ECOM_Outbound.AgentMobileno_Tb.sendKeys("982"+wm.RandomNo(7), Keys.END);   Thread.sleep(3000);
+      	    ECOM_Outbound.TokenRemarks_Tb.sendKeys("ok", Keys.END);	   Thread.sleep(3000);
+      		Thread.sleep(3000);
+
+      	    wm.scrollTillElement(driver, ECOM_Outbound.GenerateToken_Btn);
+      	    ECOM_Outbound.GenerateToken_Btn.click();
+      		   Thread.sleep(6000);
+      		ECOM_Outbound.GenerateTokenOk_Btn.click();
+      		   Thread.sleep(6000);
+        
+        /*
+        
+        Thread.sleep(8000);
 		for(int j=0;j<5;j++) {
-          if(wm.isElementPresent(driver, ECOM_Outbound.ProceedWdoAWB_Btn)) {
+			//ECOM_Outbound.ProceedWdoAWB_Btn
+          if(wm.isElementPresent(driver, ECOM_Outbound.AwbWDO_Lbl)) 
+          {
       		   AwbGenerated= ECOM_Outbound.AwbWDO_Lbl.get(j).toString();
 		       ECOM_Outbound.AsiADO_Icon.get(j).click();
 		       Thread.sleep(8000);
@@ -2436,15 +2644,21 @@ public class Test_BialEcom {
                wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.TspADO_Icon.get(j), 30);
                ECOM_Outbound.TspADO_Icon.get(j).click();
 		       TestDataReader.ReadLoginDetails("BIAL ECOM UAT");
-		       Thread.sleep(500);
+		       Thread.sleep(5000);
+		       wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.TspAdoTransaction_Tb, 30);
 		       System.out.println("pwd= " + Password);
                ECOM_Outbound.TspAdoTransaction_Tb.sendKeys(Password, Keys.END);
                ECOM_Outbound.TspAdoPayNow_Btn.click();Thread.sleep(3000);
                ECOM_Outbound.TspAdoYes_Btn.click();Thread.sleep(3000);
-               ECOM_Outbound.TspGenerateToken_Btn.click();Thread.sleep(3000);
+   //            ECOM_Outbound.TspGenerateToken_Btn.click();Thread.sleep(3000);
                break;
-          }
-        
+          }} 
+		 ECOM_Outbound.TspGenerateToken_Btn.click();Thread.sleep(3000);
+      	Thread.sleep(3000);
+      	 wm.VisibilityOfElementExplicityWait(driver, ECOM_Outbound.CTO_PopupBtn, 30);
+ 		ECOM_Outbound.CTO_PopupBtn.click();
+ 		Thread.sleep(8000);
+      
 	    ECOM_Outbound.VehicleNo_Tb.sendKeys("MH01"+wm.RandomNo(4), Keys.END);   Thread.sleep(3000);
 	    ECOM_Outbound.DriverLicenseNo_Tb.sendKeys("D"+wm.RandomNo(5), Keys.END);	   Thread.sleep(3000);
 	    ECOM_Outbound.DriverName_Tb.sendKeys("tester", Keys.END);  Thread.sleep(3000);
@@ -2457,7 +2671,7 @@ public class Test_BialEcom {
 	    ECOM_Outbound.GenerateToken_Btn.click();
 		   Thread.sleep(3000);
 		ECOM_Outbound.GenerateTokenOk_Btn.click();
-		   Thread.sleep(3000);
+		   Thread.sleep(3000); */
 		   
 		   String Ecom_URL= "https://galaxyuat.kalelogistics.com/GalaxyV3DOM/Login.aspx";
 	        System.out.println("nop=" +Integer.toString((Integer.parseInt(nop)-1))+"\t"+nop);
@@ -2471,7 +2685,7 @@ public class Test_BialEcom {
 			Thread.sleep(500);
 			loginScreen.Bial_Login(Entity, Username, Password);
 			   Thread.sleep(3000);
-
+/*
 		   
 	    driver.switchTo().defaultContent();	 Thread.sleep(10000);
 	    Nmial_Outbound.ImportsGHA_Tab.click();Thread.sleep(3000);
@@ -2503,9 +2717,12 @@ public class Test_BialEcom {
 		ECOM_Outbound.WDOcustomRef_Tb.sendKeys(wm.RandomNo(7), Keys.END);Thread.sleep(3000);
 		wm.scrollTillElement(driver, ECOM_Outbound.GenerateWDO_Btn);
 		ECOM_Outbound.GenerateWDO_Btn.click();Thread.sleep(3000);
-		ECOM_Outbound.ReleasedWDO_Btn.click();Thread.sleep(3000);}
+		ECOM_Outbound.ReleasedWDO_Btn.click();Thread.sleep(3000);   
+		
+		*/
+		}
 
-	}
+	
 	
 	@When("click on Imports> Warehouse Location and save AWB details for ECOM GHA")
 	public void click_on_imports_warehouse_location_and_save_awb_details_for_ecom_gha() throws Throwable {

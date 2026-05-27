@@ -272,6 +272,7 @@ Feature: BIAL Ecom feature
   
   @Inbound_WDO
   Scenario: To verify Inbound WDO and create Flight 
+  
   When I login with "BIAL ECOM Approver" BIAL Ecom Agent user given in "Login" sheet for Outbound
   When launch browser for Ecom GHA application and login with "ECOM GHA user" ECOM GHA user given in "Login" sheet for Inbound
   When click on Masters>> More>> Flight> Details in ECOM GHA
@@ -280,7 +281,7 @@ Feature: BIAL Ecom feature
   When click on Imports>> Import Manifest and enter created "" Flight of ECOM GHA 
   When enter "AAF" with "6e" and add Flight ULD details
   When click on ULD and add AWB details in ECOM GHA
-  When enter "1000" ATA date time and save "10" DocReceive, "10" Breakdown details of ECOM GHA
+  When enter "0800" ATA date time and save "08" DocReceive, "08" Breakdown details of ECOM GHA
   When select all ULD shipment and click on Match button of ECOM GHA
   Then verify display of matched  shipment of ECOM GHA
   When select 4 shipment for Damaged Shipment and click on Discrepancy of ECOM GHA
@@ -296,7 +297,7 @@ Feature: BIAL Ecom feature
   When click on Flight Finalize button of ECOM GHA
   When launch BIAL ECOM application
   When I login with "BIAL ECOM Approver" BIAL Ecom Agent user given in "Login" sheet for Outbound
-  When click on CTO popup button for Outbound
+#  When click on CTO popup button for Outbound
   When click on Inbound tab, select flight and enter Chargeable Weight and click on Approve Delivery Order of ECOM
   When click on logout icon of Outbound
   When I login with "BIAL ECOM UAT" BIAL Ecom Agent user given in "Login" sheet for Outbound
